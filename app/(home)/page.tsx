@@ -7,6 +7,7 @@ export const metadata = {
   title: 'HOME',
 }
 
+// page.tsx 에서는 허용된 것들만 export 가 가능하다고 한다.
 const URL = `${SAMPLE_API_URL_PREFIX}`
 
 /**
