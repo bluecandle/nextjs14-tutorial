@@ -10,3 +10,13 @@
 
 ### 장점
 `"use client"` 라고 지정된 페이지의 자바스크립트 코드만 다운로드 받게 된다 > 사용성이 좋아진다!
+
+### server component, client component 포함 관계
+
+server component 안에 client component 있을 수 있음.
+
+client component 안에는 server component 가 있을 수 없음.
+뭐...나중에는 client component 안에도 server component 를 넣는 기능이 나올 수도 있겠지?? hydration 을 하긴 하는데, 그 중에서 일부는 하지 않는다!! 뭐 이런 식. 근데 지금은 안된다! client component 자식으로 들어가는 component 는 모두 client component 가 된다.
+
+### server side component 사용예시
+- server side component 는 client 로 넘어가지 않기 때문에 (jsx 영역 제외하고), DB 와 통신하는 코드를 작성하기 좋다! (API Key 를 적어도 문제가 없다는거지.)
