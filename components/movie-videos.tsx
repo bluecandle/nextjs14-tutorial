@@ -3,7 +3,8 @@ import { SAMPLE_API_URL_PREFIX } from "../constants"
 const getVideos = async (id: string) => {
   const url = `${SAMPLE_API_URL_PREFIX}/${id}/videos`
   const response = await fetch(url)
-return response.json()
+  return response.json()
+  // throw new Error('Something Broke')
 }
 
 export default async function MovieVideos({id}:{id:string}) {
