@@ -127,6 +127,7 @@ table {
 /* reset CSS ends */
 
 body {
+  padding-top: 150px;
   font-family:
     system-ui,
     -apple-system,
