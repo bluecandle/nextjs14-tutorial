@@ -10,7 +10,7 @@ const URL = `${SAMPLE_API_URL_PREFIX}/movies`
  * 이 방식으로 하면, 자동으로 response 가 cache 되어, 페이지 재 진입시 로딩절차를 거치지 않음.
  */
 const getMovies = async () => {
-  return await (await fetch(URL)).json()
+  return await (await fetch(URL)).json()  
 }
 
 export default async function Page() {
