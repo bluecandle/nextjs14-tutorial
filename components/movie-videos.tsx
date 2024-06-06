@@ -9,9 +9,8 @@ const getVideos = async (id: string) => {
 
 export default async function MovieVideos({id}:{id:string}) {
     
-    const videos = await getVideos(id)
+  const videos = await getVideos(id)
   return <>
     <h6>{JSON.stringify(videos)}</h6>
   </>
-    
 }
