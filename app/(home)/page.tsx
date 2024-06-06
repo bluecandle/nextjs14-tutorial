@@ -1,4 +1,6 @@
-import Navigation from "../components/navigation";
+export const metadata = {
+  title: 'HOME',
+}
 
 export default function Page() {
     return <div>
