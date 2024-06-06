@@ -1,20 +1,21 @@
-"use client";
+import { SAMPLE_API_URL_PREFIX } from "../../constants"
 
-import { useEffect, useState } from "react"
+export const metadata = {
+  title: 'HOME',
+}
 
-export default function Page() {
-  const [isLoading, setIsLoading] = useState(true)
-  const [movies, setMovies] = useState([]);
-  const getMovies = async () => {
-    const response = await fetch("https://nomad-movies.nomadcoders.workers.dev/movies")
-    const json = await response.json();
-    setMovies(json)
-    setIsLoading(false);
-  }
-  useEffect(() => {
-    getMovies()
-  },[])
-  return <div>
-      {isLoading?"Loading...":JSON.stringify(movies)}        
+const URL = `${SAMPLE_API_URL_PREFIX}/movies`
+
+/**
+ * 이 방식으로 하면, 자동으로 response 가 cache 되어, 페이지 재 진입시 로딩절차를 거치지 않음.
+ */
+const getMovies = async () => {
+  return await (await fetch(URL)).json()
+}
+
+export default async function Page() {
+  const movies = await getMovies()
+    return <div>
+        {JSON.stringify(movies)}
     </div>
 }
